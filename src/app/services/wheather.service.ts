@@ -25,20 +25,19 @@ export class WheatherService {
   setLocationsInLocalStorage(locations: any) {
     let locationsInLocalStorage = localStorage.getItem('locations');
 
-    if(!locationsInLocalStorage) {
+    if(!locationsInLocalStorage)
       localStorage.setItem('locations', JSON.stringify([locations]))
-    } else {
-
+    else 
       localStorage.setItem('locations', JSON.stringify([...JSON.parse(locationsInLocalStorage), locations]))
-    }
+    
   }
 
   getLocationsInLocalStorage() {
     let locationsInLocalStorage = localStorage.getItem('locations');
 
-    if(!locationsInLocalStorage) {
+    if(!locationsInLocalStorage)
       return []
-    } 
+  
     return JSON.parse(locationsInLocalStorage);
   }
 

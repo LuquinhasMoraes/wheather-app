@@ -27,29 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.locations = this.wheatherService.getLocationsInLocalStorage();
-
-    
-  }
-
-  setLocationsInLocalStorage(locations: any) {
-    let locationsInLocalStorage = localStorage.getItem('locations');
-
-    if(!locationsInLocalStorage) {
-      localStorage.setItem('locations', JSON.stringify([locations]))
-    } else {
-
-      localStorage.setItem('locations', JSON.stringify([...JSON.parse(locationsInLocalStorage), locations]))
-    }
-  }
-
-  getLocationsInLocalStorage() {
-    let locationsInLocalStorage = localStorage.getItem('locations');
-
-    if(!locationsInLocalStorage) {
-      return []
-    } 
-    return JSON.parse(locationsInLocalStorage);
+    this.locations = this.wheatherService.getLocationsInLocalStorage();    
   }
 
   addLocation() {
